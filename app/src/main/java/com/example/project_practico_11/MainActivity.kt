@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 //Ejercicio A
-fun main() {
+/*fun main() {
     var num1 = 10
     val num2 = 33
     val num3 = 66
@@ -25,5 +25,27 @@ fun main() {
 
     println("El promedio es $promedio")
 }
+*/
 
+//Ejercicio C
+fun main(){
 
+    val amanda = Person("Amanda", 33, "play tennis", null)
+    val atigah = Person("Atigah", 28, "climb", amanda)
+
+    amanda.showProfile()
+    atigah.showProfile()
+}
+class Person(val name:String, val age:Int, val hobby:String, val referrer: Person?){
+    fun showProfile(){
+        println("Amanda: $name")
+        println("Age: $age")
+        println("Likes to: $hobby")
+
+        if(referrer==null){
+            println("Doesn't have a referrer.")
+        }else{
+            println("Has a referrer named ${referrer.name}, who likes to ${referrer.hobby}")
+        }
+    }
+}
